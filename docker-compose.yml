@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+
+  website:
+    build:
+      context: ./Book_Finder
+    command: python /usr/src/Book_Finder/manage.py runserver 0.0.0.0:8100
+    volumes:
+      - ./Book_Finder:/usr/src/Book_Finder
+    ports:
+      - 8100:8100
+    depends_on:
+      - book_finder_db
+
+  book_finder_db:
+      image: postgres
+      environment:
+        - POSTGRES_DB=book_finder_app
+        - POSTGRES_USER=admindb
+        - POSTGRES_PASSWORD=12345678
+      container_name: book_finder_db
+      volumes:
+        - pgdbdata:/var/lib/postgresql/data/
+volumes:
+  pgdbdata:

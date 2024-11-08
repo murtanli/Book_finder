@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'css/main_css.css'  %}">
+</head>
+<body>
+    <header>
+        <div class="text_inf">
+            <div class="logo">
+                <img src="{% static 'images/logo_white.png' %}" alt="">
+            </div>
+            <div class="links">
+                <a href="{% url 'search_book' %}">Найти книгу</a>
+                <a href="{% url 'search_book' %}">Все книги</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main_page">
+        <section class="welcome-section">
+            <h1>Добро пожаловать в нашу библиотеку</h1>
+            <p>Откройте для себя мир книг, который всегда под рукой!</p>
+            <a href="{% url 'search_book' %}" class="cta-button">Найти книгу по душе</a>
+        </section>
+        <section class="book-section">
+            <h2>Популярные книги</h2>
+            <div class="book-cards">
+                {% for book in books_mas %}
+                    <div class="book-card">
+                        <img src="{% url 'get_book_image' book.image.id %}" alt="Книга">
+                        <h3>{{ book.book.book_name }}</h3> 
+                        <div class="rait">
+                            <p>Рейтинг</p> 
+                            <h1>{{ book.book.rating }}</h1>
+                        </div>
+                                                             
+                        <p>Автор{% if book.author.all|length > 1 %}ы{% endif %}: 
+                            {% for author in book.author.all %}
+                               {{ author.abbreviation }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                         </p>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    
+    </div>
+    
+</body>
+</html>

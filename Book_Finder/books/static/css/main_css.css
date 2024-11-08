@@ -1,0 +1,159 @@
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf)
+}
+
+p, h1, a, h2, h3{
+    text-decoration: none;
+    font-family: Inter;
+    color: white;
+}
+body{
+    background-color: #080808;
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 10vh;
+}
+.text_inf{
+    display: flex;
+    margin-left: 25%;
+    margin-right: 30%;
+    gap: 10vh;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+.logo {
+    height: 10vh;
+}
+.links{
+    display: flex;
+    align-items: center;
+    gap: 5vh;
+}
+.links a {
+    font-weight: 300;
+    font-size: 2.2vh;
+    margin-top: 1vh;
+    color: white; 
+    position: relative;
+    display: inline-block;
+    transition: background 0.4s ease, color 0.4s ease;
+    letter-spacing: 0.2vh;
+}
+
+.links a:hover {
+    background: linear-gradient(45deg, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+
+/* Главный блок страницы */
+.main_page {
+    padding: 20px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+/* Приветственный блок */
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('{% static "images/library_background.jpg" %}') center/cover no-repeat;
+ 
+}
+.welcome-section p{
+    color: white;
+    font-size: 4vh;
+    margin: 20px 0;
+}
+
+.welcome-section h1 {
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #ff6600;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 2vh;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffcc00;
+}
+
+/* Секция книг */
+.book-section {
+    padding: 20px;
+    text-align: center;
+    margin-top: 10vh;
+}
+.book-section h2{
+    font-size: 6vh;
+    margin-bottom: 10vh;
+}
+
+.book-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.book-card img {
+    width: 70%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+}
+
+.book-card h3,p{
+    color: black;
+}
+
+
+.rait{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+    justify-content: center;
+}
+.rait h1{
+    color: #ff6600;
+}
+.rait p{
+    font-size: 1.8vh;
+}
+.welcome-section h1{
+    font-size: 9vh;
+}
